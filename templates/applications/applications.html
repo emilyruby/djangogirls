@@ -112,7 +112,7 @@
                       </td>
                       <td>
                           {% if app|scored_by_user:request.user %}
-                              {{ app.average_score }}
+                              {{ app.average_score|floatformat:"3" }}
                               <span class="num_votes">({{ app.scores.count }} vote{{ app.scores.count|pluralize }}, &sigma;={{ app.stdev|floatformat:"1" }})</span>
                           {% else %}
                               (hidden)
